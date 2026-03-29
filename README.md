@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Carlo Baclao - Portfolio Website
+
+A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- **Clean White Theme**: Minimalist design with maximized spacing
+- **Sidebar Navigation**: Persistent navigation with Home, About, Achievements, and Projects sections
+- **Resume Modal**: Interactive resume display that keeps the sidebar visible
+- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
+- **TypeScript**: Full type safety throughout the application
+- **Modern Stack**: Built with Next.js 14+, TypeScript, and Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+2. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
+
+3. **Open in Browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## Project Structure
+
+```
+src/
+├── app/                 # Next.js App Router pages
+├── components/          # React components
+├── contexts/           # React Context providers
+├── data/              # Static data and content
+├── types/             # TypeScript type definitions
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Components
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Sidebar**: Navigation with user profile and menu
+- **UserProfile**: Profile photo, name, title, and resume button
+- **NavigationMenu**: Four-section navigation (Home, About, Achievements, Projects)
+- **ResumeModal**: Modal overlay for resume display
+- **ContentArea**: Dynamic content display for each section
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+### Profile Information
+Update the profile data in `src/data/resume.ts` and `src/data/content.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+### Profile Photo
+Replace `public/profile-placeholder.svg` with your actual profile photo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Content
+Modify the content for each section in `src/data/content.tsx`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- **Next.js 14+**: React framework with App Router
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **React Context**: State management
+- **Next.js Image**: Optimized image loading
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2024 Carlo Baclao. All rights reserved.
