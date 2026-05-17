@@ -35,7 +35,7 @@ export function NavigationMenu({ currentSection, onSectionChange }: NavigationMe
                 className={`w-full flex items-center px-3 py-2 text-sm text-left rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 relative overflow-hidden ${
                   isActive
                     ? 'bg-blue-600 text-white'
-                    : 'text-gray-400 hover:bg-slate-700 hover:text-white'
+                    : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-slate-700 hover:text-gray-900 dark:hover:text-white'
                 }`}
                 aria-current={isActive ? 'page' : undefined}
                 whileHover={{ scale: 1.01 }}

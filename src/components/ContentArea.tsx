@@ -38,7 +38,7 @@ function TypingGreeting() {
 
   return (
     <div className="flex items-center gap-2 mb-6 px-2">
-      <h1 className="text-xl font-black text-white uppercase tracking-tight" suppressHydrationWarning>
+      <h1 className="text-xl font-black text-gray-900 dark:text-white uppercase tracking-tight" suppressHydrationWarning>
         {displayedText}
         {index < greetingText.length && <motion.span
           className="inline-block w-1.5 h-5 bg-blue-500 ml-1 translate-y-1"

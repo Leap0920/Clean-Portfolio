@@ -1,7 +1,7 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { NavigationProvider, useNavigation } from '@/contexts';
+import { NavigationProvider, useNavigation, ThemeProvider } from '@/contexts';
 import { Sidebar, ContentArea, ResumeModal, RightSidebar, CertificationModal } from '@/components';
 import { getSectionContent } from '@/data/content';
 import { resumeData } from '@/data/resume';
@@ -20,7 +20,7 @@ function PortfolioContent() {
     selectedCertification, isCertModalOpen, openCertModal, closeCertModal,
   } = useNavigation();
 
-  const sectionContent = getSectionContent(openCertModal, openResume);
+  const sectionContent = getSectionContent(openCertModal, openResume, setCurrentSection);
 
   return (
     <>
@@ -29,7 +29,7 @@ function PortfolioContent() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="h-screen p-3 sm:p-4 flex flex-col overflow-hidden text-slate-100"
+        className="h-screen p-3 sm:p-4 flex flex-col overflow-hidden text-gray-900 dark:text-slate-100"
       >
         <div className="flex-1 flex gap-4 overflow-hidden max-w-7xl mx-auto w-full">
           {/* Left Sidebar */}
@@ -47,7 +47,7 @@ function PortfolioContent() {
           </motion.div>
 
           {/* Main Content Area */}
-          <div className="flex-1 overflow-hidden flex flex-col bg-slate-800/80 backdrop-blur-md rounded-2xl shadow-sm border border-slate-700 relative p-4 sm:p-6">
+          <div className="flex-1 overflow-hidden flex flex-col bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-2xl shadow-sm border border-gray-200 dark:border-slate-700 relative p-4 sm:p-6 transition-colors duration-300">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSection}
@@ -104,8 +104,10 @@ function PortfolioContent() {
 
 export default function Home() {
   return (
-    <NavigationProvider>
-      <PortfolioContent />
-    </NavigationProvider>
+    <ThemeProvider>
+      <NavigationProvider>
+        <PortfolioContent />
+      </NavigationProvider>
+    </ThemeProvider>
   );
 }

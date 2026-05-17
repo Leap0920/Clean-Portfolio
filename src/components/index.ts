@@ -5,7 +5,7 @@ export { UserProfile } from './UserProfile';
 export { NavigationMenu } from './NavigationMenu';
 export { ResumeModal } from './ResumeModal';
 export { ContentArea } from './ContentArea';
-export { DarkModeToggle } from './DarkModeToggle';
+export { ThemeToggle } from './ThemeToggle';
 export { RightSidebar } from './RightSidebar';
 export { GitHubSection } from './GitHubSection';
 export { CertificationModal } from './CertificationModal';

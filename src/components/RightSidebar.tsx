@@ -5,18 +5,18 @@ import { FileCode2, Coffee, Database, GitBranch, Code, Monitor, Smartphone, Shie
 import { GithubIcon, LinkedinIcon } from './BrandIcons';
 
 const skillIcons: Record<string, React.ReactNode> = {
-  'JavaScript': <FileCode2 size={14} className="text-yellow-400" />,
-  'TypeScript': <FileCode2 size={14} className="text-blue-400" />,
-  'Java': <Coffee size={14} className="text-orange-400" />,
-  'React': <Code size={14} className="text-cyan-400" />,
-  'Spring Boot': <Server size={14} className="text-green-400" />,
-  'PostgreSQL': <Database size={14} className="text-indigo-400" />,
-  'Next.js': <Box size={14} className="text-white" />,
-  'PHP': <Code size={14} className="text-purple-400" />,
-  'MongoDB': <Database size={14} className="text-green-500" />,
-  'Tailwind CSS': <Palette size={14} className="text-teal-400" />,
-  'Flutter': <Smartphone size={14} className="text-blue-300" />,
-  'Git': <GitBranch size={14} className="text-red-400" />,
+  'JavaScript': <FileCode2 size={14} className="text-yellow-500 dark:text-yellow-400" />,
+  'TypeScript': <FileCode2 size={14} className="text-blue-500 dark:text-blue-400" />,
+  'Java': <Coffee size={14} className="text-orange-500 dark:text-orange-400" />,
+  'React': <Code size={14} className="text-cyan-500 dark:text-cyan-400" />,
+  'Spring Boot': <Server size={14} className="text-green-500 dark:text-green-400" />,
+  'PostgreSQL': <Database size={14} className="text-indigo-500 dark:text-indigo-400" />,
+  'Next.js': <Box size={14} className="text-gray-700 dark:text-white" />,
+  'PHP': <Code size={14} className="text-purple-500 dark:text-purple-400" />,
+  'MongoDB': <Database size={14} className="text-green-600 dark:text-green-500" />,
+  'Tailwind CSS': <Palette size={14} className="text-teal-500 dark:text-teal-400" />,
+  'Flutter': <Smartphone size={14} className="text-blue-400 dark:text-blue-300" />,
+  'Git': <GitBranch size={14} className="text-red-500 dark:text-red-400" />,
 };
 
 export function RightSidebar() {
@@ -45,18 +45,18 @@ export function RightSidebar() {
       initial={{ opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.1 }}
-      className="w-64 flex flex-col gap-4"
+      className="w-64 flex flex-col gap-3"
     >
       {/* Skill Set Section */}
-      <motion.div className="bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-slate-700">
-        <h3 className="text-sm font-semibold text-white mb-3">Core Stack</h3>
+      <motion.div className="bg-white dark:bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-gray-200 dark:border-slate-700 transition-colors duration-300">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Core Stack</h3>
 
         <div className="flex flex-wrap gap-1.5">
           {skills.map((skill, idx) => (
             <motion.span
               key={idx}
               whileHover={{ scale: 1.05 }}
-              className="text-xs px-2 py-1 bg-slate-700 text-slate-200 rounded-md font-medium border border-slate-600 flex items-center gap-1.5"
+              className="text-xs px-2 py-1 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-slate-200 rounded-md font-medium border border-gray-200 dark:border-slate-600 flex items-center gap-1.5 transition-colors duration-300"
             >
               {skillIcons[skill]}
               {skill}
@@ -66,29 +66,29 @@ export function RightSidebar() {
       </motion.div>
 
       {/* Expertise Section */}
-      <motion.div className="bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-slate-700">
+      <motion.div className="bg-white dark:bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-gray-200 dark:border-slate-700 transition-colors duration-300">
         <div className="flex items-center gap-2 mb-3">
           <Target size={16} className="text-blue-500" />
-          <h3 className="text-sm font-semibold text-white">Expertise</h3>
+          <h3 className="text-sm font-semibold text-gray-900 dark:text-white">Expertise</h3>
         </div>
 
         <div className="space-y-1.5">
           {expertise.map((item, idx) => (
             <motion.div
               key={idx}
-              className="w-full px-3 py-2 bg-slate-700/50 hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2.5 border border-transparent"
+              className="w-full px-3 py-2 bg-gray-50 dark:bg-slate-700/50 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-colors flex items-center gap-2.5 border border-transparent"
               whileHover={{ scale: 1.01, x: 2 }}
             >
               {item.icon}
-              <span className="text-xs font-medium text-gray-300">{item.title}</span>
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-300">{item.title}</span>
             </motion.div>
           ))}
         </div>
       </motion.div>
 
       {/* Quick Links Section */}
-      <motion.div className="bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-slate-700">
-        <h3 className="text-sm font-semibold text-white mb-3">Connect</h3>
+      <motion.div className="bg-white dark:bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-gray-200 dark:border-slate-700 transition-colors duration-300">
+        <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-3">Connect</h3>
         <div className="flex gap-2">
           {socialLinks.map((link, idx) => (
             <a
@@ -96,7 +96,7 @@ export function RightSidebar() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 flex items-center justify-center bg-slate-700 hover:bg-slate-600 hover:text-blue-400 rounded-full transition-colors text-gray-300"
+              className="w-9 h-9 flex items-center justify-center bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 hover:text-blue-500 dark:hover:text-blue-400 rounded-full transition-colors text-gray-600 dark:text-gray-300"
               aria-label={link.name}
             >
               {link.icon}

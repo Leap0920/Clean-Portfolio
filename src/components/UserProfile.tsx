@@ -2,10 +2,19 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { UserProfileProps } from '@/types/components';
+import { useTheme } from '@/contexts';
 import { Download, Mail, Phone, MapPin } from 'lucide-react';
 
-export function UserProfile({ name, title, photoUrl, onResumeClick }: UserProfileProps) {
+interface UserProfileProps {
+  name: string;
+  title: string;
+  onResumeClick: () => void;
+}
+
+export function UserProfile({ name, title, onResumeClick }: UserProfileProps) {
+  const { isDark } = useTheme();
+  const profileImage = isDark ? '/images/black.png' : '/images/white.png';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -15,7 +24,7 @@ export function UserProfile({ name, title, photoUrl, onResumeClick }: UserProfil
     >
       {/* Profile Image */}
       <motion.div
-        className="relative w-16 h-16 mb-3"
+        className="relative w-20 h-20 mb-3"
         whileHover={{ scale: 1.05 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       >
@@ -34,10 +43,11 @@ export function UserProfile({ name, title, photoUrl, onResumeClick }: UserProfil
           }}
         >
           <Image
-            src={photoUrl}
+            key={profileImage}
+            src={profileImage}
             alt={`${name} profile photo`}
             fill
-            sizes="64px"
+            sizes="80px"
             className="rounded-full object-cover"
             priority
           />
@@ -51,10 +61,10 @@ export function UserProfile({ name, title, photoUrl, onResumeClick }: UserProfil
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.4 }}
       >
-        <h1 className="text-base font-semibold text-white mb-0.5">
+        <h1 className="text-base font-semibold text-gray-900 dark:text-white mb-0.5">
           {name}
         </h1>
-        <p className="text-xs text-gray-400">
+        <p className="text-xs text-gray-500 dark:text-gray-400">
           {title}
         </p>
       </motion.div>
@@ -62,7 +72,7 @@ export function UserProfile({ name, title, photoUrl, onResumeClick }: UserProfil
       {/* Resume Button */}
       <motion.button
         onClick={onResumeClick}
-        className="w-full px-3 py-2 bg-slate-700 text-gray-200 text-xs font-medium rounded-lg hover:bg-slate-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex items-center justify-center gap-1.5 mb-4"
+        className="w-full px-3 py-2 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 text-xs font-medium rounded-lg hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 flex items-center justify-center gap-1.5 mb-4"
         aria-label="View resume"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
@@ -73,14 +83,14 @@ export function UserProfile({ name, title, photoUrl, onResumeClick }: UserProfil
 
       {/* Contact Info */}
       <motion.div
-        className="w-full space-y-2 text-xs text-gray-400"
+        className="w-full space-y-2 text-xs text-gray-500 dark:text-gray-400"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
       >
         <div className="flex items-center gap-2 truncate">
           <Mail size={12} className="shrink-0" />
-          <a href="mailto:baclao.carlo.cometa@gmail.com" className="hover:text-blue-400 truncate transition-colors" title="baclao.carlo.cometa@gmail.com">baclao.carlo.cometa@gmail.com</a>
+          <a href="mailto:baclao.carlo.cometa@gmail.com" className="hover:text-blue-500 dark:hover:text-blue-400 truncate transition-colors" title="baclao.carlo.cometa@gmail.com">baclao.carlo.cometa@gmail.com</a>
         </div>
         <div className="flex items-center gap-2">
           <Phone size={12} className="shrink-0" />

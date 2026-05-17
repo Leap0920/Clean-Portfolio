@@ -10,7 +10,7 @@ export const resumeData: ResumeData = {
     linkedin: 'https://www.linkedin.com/in/baclao-carlo-22936435a/',
     github: 'https://github.com/Leap0920',
   },
-  summary: 'Full-stack software engineer specializing in Java Spring Boot, React, and PostgreSQL. I build end-to-end systems — from Raspberry Pi IoT deployments to enterprise-grade attendance management with automated email servers, database migrations, and standalone Windows installers. Currently pursuing my BS in Information Technology at Quezon City University.',
+  summary: 'A passionate software engineer with 5 years of programming experience. I enjoy building full-stack applications, exploring IoT solutions, and turning ideas into functional systems. Currently pursuing my BS in Information Technology at Quezon City University.',
   experience: [
     {
       id: 'ams-1',
