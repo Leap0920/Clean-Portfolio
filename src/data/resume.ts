@@ -51,7 +51,7 @@ export const resumeData: ResumeData = {
     {
       id: '2',
       institution: 'Asian Institute of Computer Studies',
-      degree: 'Information Technology',
+      degree: 'Senior High School',
       field: 'Information Technology',
       startDate: new Date('2021-08-01'),
       endDate: new Date('2023-06-01'),
@@ -165,12 +165,6 @@ export const resumeData: ResumeData = {
       name: 'Build 13 Projects with PHP MySQL Bootstrap and PDO',
       issuer: 'Udemy',
       issueDate: new Date('2023-04-01'),
-    },
-    {
-      id: 'udemy-12',
-      name: 'Strong Problem-Solving',
-      issuer: 'Udemy',
-      issueDate: new Date('2023-07-01'),
     }
   ]
 };

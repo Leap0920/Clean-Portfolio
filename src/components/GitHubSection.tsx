@@ -1,8 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, FolderGit2, Star, GitFork, RefreshCw } from 'lucide-react';
+import { ExternalLink, FolderGit2, Star, GitFork } from 'lucide-react';
 import { GithubIcon } from './BrandIcons';
 
 interface Repo {
@@ -13,96 +13,6 @@ interface Repo {
   stargazers_count: number;
   forks_count: number;
   language: string;
-}
-
-function ContributionGraph() {
-  const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading');
-  const svgRef = useRef<HTMLDivElement>(null);
-  const [count, setCount] = useState('---');
-
-  useEffect(() => {
-    // Fetch the SVG contributions chart
-    fetch('https://ghchart.rshah.org/219138/Leap0920')
-      .then(res => {
-        if (!res.ok) throw new Error('Failed');
-        return res.text();
-      })
-      .then(svgText => {
-        if (svgRef.current) {
-          // Parse SVG and inject it
-          const wrapper = document.createElement('div');
-          wrapper.innerHTML = svgText;
-          const svg = wrapper.querySelector('svg');
-          if (svg) {
-            // Remove fixed width to make it responsive
-            svg.removeAttribute('width');
-            svg.setAttribute('height', '100');
-            svg.style.width = '100%';
-            svg.style.height = 'auto';
-            // Update colors for dark theme
-            const cells = svg.querySelectorAll('rect');
-            cells.forEach(rect => {
-              const fill = rect.getAttribute('fill') || '';
-              // Map green shades to emerald shades that look good on dark
-              if (fill === '#ebedf0') rect.setAttribute('fill', '#1e293b');
-              else if (fill === '#9be9a8') rect.setAttribute('fill', '#064e3b');
-              else if (fill === '#40c463') rect.setAttribute('fill', '#047857');
-              else if (fill === '#30a14e') rect.setAttribute('fill', '#10b981');
-              else if (fill === '#216e39') rect.setAttribute('fill', '#34d399');
-            });
-            // Count total contributions
-            let total = 0;
-            cells.forEach(rect => {
-              const fill = rect.getAttribute('fill') || '';
-              if (fill !== '#1e293b') total++;
-            });
-            setCount(total.toString());
-            svgRef.current.innerHTML = '';
-            svgRef.current.appendChild(svg);
-          }
-        }
-        setStatus('ready');
-      })
-      .catch(() => {
-        setStatus('error');
-      });
-  }, []);
-
-  if (status === 'loading') {
-    return (
-      <div className="flex items-center justify-center h-[120px]">
-        <RefreshCw size={20} className="text-slate-500 animate-spin" />
-      </div>
-    );
-  }
-
-  if (status === 'error') {
-    return (
-      <div className="flex items-center justify-center h-[120px] text-slate-500 text-sm">
-        Could not load contribution data
-      </div>
-    );
-  }
-
-  return (
-    <div>
-      <div className="overflow-hidden">
-        <div ref={svgRef} className="[&_svg]:w-full [&_svg]:h-auto" />
-      </div>
-      <div className="flex items-center justify-between mt-3">
-        <span className="text-xs text-slate-400">{count} contributions this year</span>
-        <div className="flex items-center gap-1">
-          <span className="text-[10px] text-slate-500 mr-1">Less</span>
-          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#1e293b]" />
-          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#064e3b]" />
-          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#047857]" />
-          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#10b981]" />
-          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#34d399]" />
-          <span className="text-[10px] text-slate-500 ml-1">More</span>
-        </div>
-      </div>
-    </div>
-  );
 }
 
 export function GitHubSection() {
@@ -151,7 +61,25 @@ export function GitHubSection() {
           </a>
         </div>
 
-        <ContributionGraph />
+        {/* Uses our API proxy to recolor the SVG for dark theme */}
+        <div className="overflow-hidden rounded-lg bg-slate-700/50 p-3">
+          <img
+            src="/api/github/contributions"
+            alt="Carlo Baclao's GitHub Contributions"
+            className="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="flex items-center justify-end gap-1 mt-3 text-[10px] text-slate-500">
+          <span>Less</span>
+          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#334155]" />
+          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#0e4429]" />
+          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#006d32]" />
+          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#26a641]" />
+          <div className="w-[10px] h-[10px] rounded-[2px] bg-[#39d353]" />
+          <span>More</span>
+        </div>
       </motion.div>
 
       {/* Repositories Grid */}

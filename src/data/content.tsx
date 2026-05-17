@@ -64,7 +64,7 @@ export function getSectionContent(openCertModal: (cert: CertificationItem) => vo
             {[
               { label: 'Experience', value: '1+ Yr', icon: <Briefcase size={20} />, color: 'blue' },
               { label: 'Projects', value: '5+', icon: <Sparkles size={20} />, color: 'emerald' },
-              { label: 'Certificates', value: '16', icon: <Award size={20} />, color: 'orange' },
+              { label: 'Certificates', value: '15', icon: <Award size={20} />, color: 'orange' },
               { label: 'Technologies', value: '12+', icon: <Layers size={20} />, color: 'purple' },
             ].map((stat, i) => (
               <motion.div

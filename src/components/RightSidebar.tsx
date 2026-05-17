@@ -12,16 +12,25 @@ const skillIcons: Record<string, React.ReactNode> = {
   'Spring Boot': <Server size={14} className="text-green-400" />,
   'PostgreSQL': <Database size={14} className="text-indigo-400" />,
   'Next.js': <Box size={14} className="text-white" />,
+  'PHP': <Code size={14} className="text-purple-400" />,
+  'MongoDB': <Database size={14} className="text-green-500" />,
+  'Tailwind CSS': <Palette size={14} className="text-teal-400" />,
+  'Flutter': <Smartphone size={14} className="text-blue-300" />,
   'Git': <GitBranch size={14} className="text-red-400" />,
 };
 
 export function RightSidebar() {
-  const topSkills = ['JavaScript', 'TypeScript', 'Java', 'React'];
-  const bottomSkills = ['Spring Boot', 'PostgreSQL', 'Next.js', 'Git'];
+  const skills = [
+    'JavaScript', 'TypeScript', 'Java', 'React', 'Spring Boot',
+    'Next.js', 'PHP', 'MongoDB', 'PostgreSQL', 'Tailwind CSS',
+    'Flutter', 'Git',
+  ];
 
   const expertise = [
-    { title: 'Full Stack Dev', icon: <Monitor size={16} className="text-blue-500" /> },
-    { title: 'IoT / Raspberry Pi', icon: <Server size={16} className="text-green-500" /> },
+    { title: 'Full Stack Development', icon: <Monitor size={16} className="text-blue-500" /> },
+    { title: 'Mobile Development', icon: <Smartphone size={16} className="text-green-500" /> },
+    { title: 'IoT / Raspberry Pi', icon: <Server size={16} className="text-orange-500" /> },
+    { title: 'Database Design', icon: <Database size={16} className="text-indigo-500" /> },
     { title: 'Cybersecurity', icon: <Shield size={16} className="text-red-500" /> },
     { title: 'UI/UX Design', icon: <Palette size={16} className="text-purple-500" /> },
   ];
@@ -42,22 +51,10 @@ export function RightSidebar() {
       <motion.div className="bg-slate-800/90 backdrop-blur-md rounded-xl shadow-sm p-4 border border-slate-700">
         <h3 className="text-sm font-semibold text-white mb-3">Core Stack</h3>
 
-        <div className="flex flex-wrap gap-1.5 mb-2">
-          {topSkills.map((skill, idx) => (
-            <motion.span
-              key={`top-${idx}`}
-              whileHover={{ scale: 1.05 }}
-              className="text-xs px-2 py-1 bg-slate-700 text-slate-200 rounded-md font-medium border border-slate-600 flex items-center gap-1.5"
-            >
-              {skillIcons[skill]}
-              {skill}
-            </motion.span>
-          ))}
-        </div>
         <div className="flex flex-wrap gap-1.5">
-          {bottomSkills.map((skill, idx) => (
+          {skills.map((skill, idx) => (
             <motion.span
-              key={`bottom-${idx}`}
+              key={idx}
               whileHover={{ scale: 1.05 }}
               className="text-xs px-2 py-1 bg-slate-700 text-slate-200 rounded-md font-medium border border-slate-600 flex items-center gap-1.5"
             >
