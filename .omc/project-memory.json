@@ -42,7 +42,7 @@
     "runtime": null
   },
   "build": {
-    "buildCommand": "cd \"C:/codes/Clean-Portfolio\" && npm run build 2>&1 | tail -10",
+    "buildCommand": "cd \"C:/codes/Clean-Portfolio\" && npx tsc --noEmit 2>&1 | head -5",
     "testCommand": null,
     "lintCommand": "npm run lint",
     "devCommand": "npm run dev",
@@ -147,21 +147,27 @@
   "hotPaths": [
     {
       "path": "src\\data\\content.tsx",
-      "accessCount": 18,
-      "lastAccessed": 1779112452773,
+      "accessCount": 27,
+      "lastAccessed": 1779160603519,
       "type": "file"
     },
     {
       "path": "src\\app\\page.tsx",
-      "accessCount": 18,
-      "lastAccessed": 1779114411252,
+      "accessCount": 20,
+      "lastAccessed": 1779159223378,
       "type": "file"
     },
     {
       "path": "",
-      "accessCount": 14,
-      "lastAccessed": 1779110835770,
+      "accessCount": 15,
+      "lastAccessed": 1779159221232,
       "type": "directory"
+    },
+    {
+      "path": "src\\data\\resume.ts",
+      "accessCount": 14,
+      "lastAccessed": 1779160925055,
+      "type": "file"
     },
     {
       "path": "src\\components\\animations\\index.tsx",
@@ -189,8 +195,8 @@
     },
     {
       "path": "src\\components\\ContentArea.tsx",
-      "accessCount": 8,
-      "lastAccessed": 1779110854830,
+      "accessCount": 9,
+      "lastAccessed": 1779159229960,
       "type": "file"
     },
     {
@@ -201,14 +207,32 @@
     },
     {
       "path": "src",
-      "accessCount": 6,
-      "lastAccessed": 1779112078578,
+      "accessCount": 7,
+      "lastAccessed": 1779159216612,
       "type": "directory"
+    },
+    {
+      "path": "src\\components\\CertificationModal.tsx",
+      "accessCount": 7,
+      "lastAccessed": 1779160590678,
+      "type": "file"
     },
     {
       "path": "src\\components\\SwipeHint.tsx",
       "accessCount": 6,
       "lastAccessed": 1779114940902,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\Sidebar.tsx",
+      "accessCount": 5,
+      "lastAccessed": 1779159230072,
+      "type": "file"
+    },
+    {
+      "path": "src\\types\\index.ts",
+      "accessCount": 5,
+      "lastAccessed": 1779159731920,
       "type": "file"
     },
     {
@@ -218,21 +242,15 @@
       "type": "file"
     },
     {
-      "path": "src\\data\\resume.ts",
-      "accessCount": 4,
-      "lastAccessed": 1779110971887,
-      "type": "file"
-    },
-    {
-      "path": "src\\components\\Sidebar.tsx",
-      "accessCount": 4,
-      "lastAccessed": 1779113877124,
-      "type": "file"
-    },
-    {
       "path": "src\\components\\RightSidebar.tsx",
       "accessCount": 3,
       "lastAccessed": 1779113877209,
+      "type": "file"
+    },
+    {
+      "path": "src\\components\\ResumeModal.tsx",
+      "accessCount": 3,
+      "lastAccessed": 1779159821829,
       "type": "file"
     },
     {
@@ -242,16 +260,34 @@
       "type": "file"
     },
     {
-      "path": "src\\components\\CertificationModal.tsx",
+      "path": "src\\app\\layout.tsx",
       "accessCount": 2,
-      "lastAccessed": 1779110845357,
+      "lastAccessed": 1779159223630,
       "type": "file"
     },
     {
-      "path": "src\\types\\index.ts",
+      "path": "src\\components\\index.ts",
       "accessCount": 2,
-      "lastAccessed": 1779110851297,
+      "lastAccessed": 1779159223744,
       "type": "file"
+    },
+    {
+      "path": "src\\types\\components.ts",
+      "accessCount": 2,
+      "lastAccessed": 1779159229648,
+      "type": "file"
+    },
+    {
+      "path": "src\\contexts\\NavigationContext.tsx",
+      "accessCount": 2,
+      "lastAccessed": 1779159229897,
+      "type": "file"
+    },
+    {
+      "path": "%USERPROFILE%\\.openclaude\\projects\\C--codes-Clean-Portfolio\\memory",
+      "accessCount": 2,
+      "lastAccessed": 1779160947029,
+      "type": "directory"
     },
     {
       "path": "src\\components\\ParticleBackground.tsx",
@@ -278,30 +314,6 @@
       "type": "file"
     },
     {
-      "path": "src\\types\\components.ts",
-      "accessCount": 1,
-      "lastAccessed": 1779110845917,
-      "type": "file"
-    },
-    {
-      "path": "src\\components\\index.ts",
-      "accessCount": 1,
-      "lastAccessed": 1779110846042,
-      "type": "file"
-    },
-    {
-      "path": "src\\components\\ResumeModal.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1779110846109,
-      "type": "file"
-    },
-    {
-      "path": "src\\contexts\\NavigationContext.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1779110846149,
-      "type": "file"
-    },
-    {
       "path": "src\\components\\NavigationMenu.tsx",
       "accessCount": 1,
       "lastAccessed": 1779110854861,
@@ -314,12 +326,6 @@
       "type": "file"
     },
     {
-      "path": "%USERPROFILE%\\.openclaude\\projects\\C--codes-Clean-Portfolio\\memory",
-      "accessCount": 1,
-      "lastAccessed": 1779111335591,
-      "type": "directory"
-    },
-    {
       "path": "public\\images",
       "accessCount": 1,
       "lastAccessed": 1779112066656,
@@ -330,12 +336,6 @@
       "accessCount": 1,
       "lastAccessed": 1779112436087,
       "type": "directory"
-    },
-    {
-      "path": "src\\app\\layout.tsx",
-      "accessCount": 1,
-      "lastAccessed": 1779112822881,
-      "type": "file"
     },
     {
       "path": ".openclaude",

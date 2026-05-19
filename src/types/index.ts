@@ -78,11 +78,12 @@ export interface CertificationItem {
   id: string;
   name: string;
   issuer: string;
-  issueDate: Date;
+  issueDate?: Date;
   expiryDate?: Date;
   credentialId?: string;
   credentialUrl?: string;
   imageUrl?: string;
+  pdfUrl?: string;
 }
 
 export interface ResumeData {

@@ -211,8 +211,9 @@ export function ResumeModal({ isOpen, onClose, resumeContent }: ResumeModalProps
                         <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{cert.name}</h4>
                         <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{cert.issuer}</p>
                         <p className="text-gray-500 dark:text-gray-400 text-xs">
-                          Issued: {cert.issueDate.toLocaleDateString()}
-                          {cert.expiryDate && ` \u2022 Expires: ${cert.expiryDate.toLocaleDateString()}`}
+                          {cert.issueDate && `Issued: ${cert.issueDate.toLocaleDateString()}`}
+                          {cert.issueDate && cert.expiryDate && ' \u2022 '}
+                          {cert.expiryDate && `Expires: ${cert.expiryDate.toLocaleDateString()}`}
                         </p>
                         {cert.credentialUrl && (
                           <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline text-xs">

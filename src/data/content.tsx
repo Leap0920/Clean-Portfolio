@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SectionContent, NavigationSection, CertificationItem } from '@/types';
 import { resumeData } from './resume';
+
+// Shuffle certifications for display
+const shuffledCertifications = [...resumeData.certifications].sort(() => Math.random() - 0.5);
 import { GitHubSection } from '@/components/GitHubSection';
 import { ProjectShowcase } from '@/components/ProjectShowcase';
 import {
@@ -527,10 +530,10 @@ function ExperienceSection({ openCertModal }: { openCertModal: (cert: Certificat
       <div>
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-5 flex items-center gap-2">
           <Award size={20} className="text-orange-500" />
-          Certifications ({certifications.length})
+          Certifications ({shuffledCertifications.length})
         </h3>
         <div className="grid grid-cols-2 gap-3">
-          {certifications.map((cert, index) => (
+          {shuffledCertifications.map((cert, index) => (
             <motion.button
               key={cert.id}
               onClick={() => openCertModal(cert)}

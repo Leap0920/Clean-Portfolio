@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CertificationItem } from '@/types';
-import { X, Award, Building2, Calendar, ExternalLink } from 'lucide-react';
+import { X, Award, Building2, FileText, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 
 interface CertificationModalProps {
@@ -125,15 +125,6 @@ export function CertificationModal({ isOpen, onClose, certification }: Certifica
                     <div>
                       <p className="text-gray-500 dark:text-gray-400 text-xs">Issued by</p>
                       <p className="text-gray-900 dark:text-white font-medium">{certification.issuer}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm">
-                    <Calendar size={16} className="text-gray-500 shrink-0" />
-                    <div>
-                      <p className="text-gray-500 dark:text-gray-400 text-xs">Issue Date</p>
-                      <p className="text-gray-900 dark:text-white font-medium">
-                        {certification.issueDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
-                      </p>
                     </div>
                   </div>
                   {certification.credentialId && (

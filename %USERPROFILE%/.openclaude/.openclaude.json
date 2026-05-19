@@ -1,5 +1,5 @@
 {
-  "numStartups": 4,
+  "numStartups": 5,
   "tipsHistory": {
     "atomic-setup-local": 1,
     "new-user-warmup": 4,
@@ -22,8 +22,7 @@
     "desktop-app": 4,
     "web-app": 4
   },
-  "promptQueueUseCount": 2,
-  "showExpandedTodos": true,
+  "promptQueueUseCount": 4,
   "providerProfiles": [
     {
       "id": "provider_57f93480578d",
